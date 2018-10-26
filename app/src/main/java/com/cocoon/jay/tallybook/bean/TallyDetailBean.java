@@ -54,6 +54,12 @@ public class TallyDetailBean extends BaseBean {
         private String money;
         private List<ListBean> list;
 
+        public DaylistBean(String time, String money, List<ListBean> list) {
+            this.time = time;
+            this.money = money;
+            this.list = list;
+        }
+
         public String getTime() {
             return time;
         }
@@ -78,6 +84,15 @@ public class TallyDetailBean extends BaseBean {
             this.list = list;
         }
 
+        @Override
+        public String toString() {
+            return "DaylistBean{" +
+                    "time='" + time + '\'' +
+                    ", money='" + money + '\'' +
+                    ", list=" + list +
+                    '}';
+        }
+
         public static class ListBean {
             /**
              * id : 80
@@ -90,6 +105,13 @@ public class TallyDetailBean extends BaseBean {
             private String affect_money;
             private String typename;
             private String img;
+
+            public ListBean(String id, String affect_money, String typename, String img) {
+                this.id = id;
+                this.affect_money = affect_money;
+                this.typename = typename;
+                this.img = img;
+            }
 
             public String getId() {
                 return id;

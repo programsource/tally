@@ -1,5 +1,6 @@
 package com.cocoon.jay.tallybook.activity;
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -30,7 +31,7 @@ import butterknife.OnClick;
 
 /**
  * 记账本 --- 记一笔
- *
+ * <p>
  * 添加一笔记账数据
  */
 public class TallyBookNoteActivity extends BaseActivity {
@@ -64,7 +65,7 @@ public class TallyBookNoteActivity extends BaseActivity {
     private OptionsPickerView pvCustomOptions;
     private List<String> cardItem;
     //viewpager数据
-    private int page ;
+    private int page;
     private boolean isTotalPage;
     private int sortPage = -1;
     private List<TallyNoteBean.SortlistBean> mDatas;
@@ -73,7 +74,9 @@ public class TallyBookNoteActivity extends BaseActivity {
     public TallyNoteBean.SortlistBean lastBean;
     public ImageView lastImg;
 
+    private static final int RESULT_CODE_OK = 1;
 
+    private TallyBookNoteAdapter mAdapter;
 
     @Override
     protected int getLayout() {
@@ -89,19 +92,18 @@ public class TallyBookNoteActivity extends BaseActivity {
     }
 
 
-
     /**
      * 设置状态
      */
     private void setTitleStatus() {
 
         TallyNoteBean tallyNoteBean = null;
-        if (type.equals("1")){
+        if (type.equals("1")) {
             outcomeTv.setSelected(true);
             incomeTv.setSelected(false);
             tallyNoteBean = TestDataUtil.getTallyNoteBeanOut();
         }
-        if (type.equals("2")){
+        if (type.equals("2")) {
             incomeTv.setSelected(true);
             outcomeTv.setSelected(false);
             tallyNoteBean = TestDataUtil.getTallyNoteBeanIn();
@@ -133,21 +135,21 @@ public class TallyBookNoteActivity extends BaseActivity {
             tempList = new ArrayList<>();
             View view = inflater.inflate(R.layout.pager_item_tb_type, null);
             RecyclerView recycle = (RecyclerView) view.findViewById(R.id.pager_type_recycle);
-            if (i != page - 1 || (i == page -1 && isTotalPage)){
+            if (i != page - 1 || (i == page - 1 && isTotalPage)) {
                 for (int j = 0; j < 10; j++) {
-                    if (i != 0 ){
+                    if (i != 0) {
                         tempList.add(mDatas.get(i * 10 + j));
-                    }else {
+                    } else {
                         tempList.add(mDatas.get(i + j));
                     }
                 }
-            }else {
+            } else {
                 for (int j = 0; j < mDatas.size() % 10; j++) {
                     tempList.add(mDatas.get(i * 10 + j));
                 }
             }
 
-            TallyBookNoteAdapter mAdapter = new TallyBookNoteAdapter(this, tempList);
+            mAdapter = new TallyBookNoteAdapter(this, tempList);
             GridLayoutManager layoutManager = new GridLayoutManager(this, 5);
             recycle.setLayoutManager(layoutManager);
             recycle.setAdapter(mAdapter);
@@ -171,7 +173,7 @@ public class TallyBookNoteActivity extends BaseActivity {
                         icons[i].setImageResource(R.drawable.icon_banner_point2);
                     }
                     icons[position].setImageResource(R.drawable.icon_banner_point1);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -183,8 +185,10 @@ public class TallyBookNoteActivity extends BaseActivity {
         });
         initIcon();
     }
+
     private List<View> viewList;
     private ImageView[] icons;
+
     private void initIcon() {
         icons = new ImageView[viewList.size()];
         layoutIcon.removeAllViews();
@@ -193,7 +197,7 @@ public class TallyBookNoteActivity extends BaseActivity {
             icons[i].setLayoutParams(new ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             icons[i].setImageResource(R.drawable.icon_banner_point2);
-            if(viewpagerItem.getCurrentItem() == i){
+            if (viewpagerItem.getCurrentItem() == i) {
                 icons[i].setImageResource(R.drawable.icon_banner_point1);
             }
             icons[i].setPadding(5, 0, 5, 0);
@@ -205,15 +209,13 @@ public class TallyBookNoteActivity extends BaseActivity {
     }
 
 
-
-
     @OnClick({R.id.tb_note_income, R.id.tb_note_outcome, R.id.tb_note_cash, R.id.tb_note_date,
             R.id.tb_note_remark, R.id.tb_calc_num_done, R.id.tb_calc_num_del, R.id.tb_calc_num_1,
             R.id.tb_calc_num_2, R.id.tb_calc_num_3, R.id.tb_calc_num_4, R.id.tb_calc_num_5,
             R.id.tb_calc_num_6, R.id.tb_calc_num_7, R.id.tb_calc_num_8, R.id.tb_calc_num_9,
             R.id.tb_calc_num_0, R.id.tb_calc_num_dot, R.id.tb_note_clear, R.id.back_btn})
-    protected void onClick(View view){
-        switch (view.getId()){
+    protected void onClick(View view) {
+        switch (view.getId()) {
             case R.id.back_btn:
                 finish();
                 break;
@@ -244,8 +246,8 @@ public class TallyBookNoteActivity extends BaseActivity {
                         dateTv.setText(sdf.format(date));
                     }
                 })
-                        .setRange(2017,2050)
-                        .setType(new boolean[]{true,true,true,false,false,false})
+                        .setRange(2017, 2050)
+                        .setType(new boolean[]{true, true, true, false, false, false})
                         .build();
                 startTimePicker.show();
                 break;
@@ -253,7 +255,18 @@ public class TallyBookNoteActivity extends BaseActivity {
                 Toast.makeText(mContext, "点击备注", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tb_calc_num_done://确定
-                Toast.makeText(mContext, "点击确定", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent();
+                String category = getCategory();
+                String date = dateTv.getText().toString();
+                String consumptionType = type.equals("1") ? "out" : "in";//消费类型
+                String cashNumber = moneyTv.getText().toString();
+                cashNumber = consumptionType.equals("out") ? "-" + cashNumber : "+" + cashNumber;
+                intent.putExtra("category", category);
+                intent.putExtra("date", date);
+                intent.putExtra("cashNumber", cashNumber);
+                intent.putExtra("type", consumptionType);//收入或者支出
+                setResult(RESULT_CODE_OK, intent);
+                finish();
                 break;
             case R.id.tb_calc_num_1:
                 calcMoney(1);
@@ -286,7 +299,7 @@ public class TallyBookNoteActivity extends BaseActivity {
                 calcMoney(0);
                 break;
             case R.id.tb_calc_num_dot:
-                if (dotNum.equals(".00")){
+                if (dotNum.equals(".00")) {
                     isDot = true;
                     dotNum = ".";
                 }
@@ -300,17 +313,17 @@ public class TallyBookNoteActivity extends BaseActivity {
                 moneyTv.setText("0.00");
                 break;
             case R.id.tb_calc_num_del://删除
-                if (isDot){
-                    if (count > 0){
+                if (isDot) {
+                    if (count > 0) {
                         dotNum = dotNum.substring(0, dotNum.length() - 1);
                         count--;
                     }
-                    if (count == 0){
+                    if (count == 0) {
                         isDot = false;
                         dotNum = ".00";
                     }
-                    moneyTv.setText(num  + dotNum);
-                }else {
+                    moneyTv.setText(num + dotNum);
+                } else {
                     if (num.length() > 0)
                         num = num.substring(0, num.length() - 1);
                     if (num.length() == 0)
@@ -322,9 +335,6 @@ public class TallyBookNoteActivity extends BaseActivity {
     }
 
 
-
-
-
     private void calcMoney(int money) {
         if (num.equals("0") && money == 0)
             return;
@@ -334,7 +344,7 @@ public class TallyBookNoteActivity extends BaseActivity {
                 dotNum += money;
                 moneyTv.setText(num + dotNum);
             }
-        }else if (Integer.parseInt(num) < MAX_NUM) {
+        } else if (Integer.parseInt(num) < MAX_NUM) {
             if (num.equals("0"))
                 num = "";
             num += money;
@@ -342,4 +352,13 @@ public class TallyBookNoteActivity extends BaseActivity {
         }
     }
 
+
+    private static String getCategory(){
+        return category;
+    }
+    public static void setCategory(String type){
+        category = type;
+    }
+
+    private static String category;
 }

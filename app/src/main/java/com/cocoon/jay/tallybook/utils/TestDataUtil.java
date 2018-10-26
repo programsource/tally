@@ -14,8 +14,8 @@ public class TestDataUtil {
 
 
     //明细假数据
-    public static TallyDetailBean getTallyDetailBean(){
-        String str= "{\n" +
+    public static TallyDetailBean getTallyDetailBean() {
+        String str = "{\n" +
                 "    \"status\":1,\n" +
                 "    \"t_income\":\"88,929.42\",\n" +
                 "    \"t_outcome\":\"18,270.36\",\n" +
@@ -62,7 +62,7 @@ public class TestDataUtil {
                 "            \"list\":[\n" +
                 "                {\n" +
                 "                    \"id\":\"89\",\n" +
-                "                    \"affect_money\":\"+88888.00\",\n" +
+                "                    \"affect_money\":\"+88887.00\",\n" +
                 "                    \"typename\":\"返现\",\n" +
                 "                    \"img\":\"/UF/Uploads/Noteimg/listin/fanxian@2x.png\"\n" +
                 "                }\n" +
@@ -208,8 +208,8 @@ public class TestDataUtil {
 
 
     //类别报表支出假数据
-    public static TallyTypeBean getTallyTypeBeanOut(){
-        String str= "{\n" +
+    public static TallyTypeBean getTallyTypeBeanOut() {
+         String str = "{\n" +
                 "    \"status\":1,\n" +
                 "    \"total\":9973,\n" +
                 "    \"surplus\":\"-1,090.60\",\n" +
@@ -282,11 +282,9 @@ public class TestDataUtil {
     }
 
 
-
-
     //类别报表收入假数据
-    public static TallyTypeBean getTallyTypeBeanIn(){
-        String str= "{\n" +
+    public static TallyTypeBean getTallyTypeBeanIn() {
+        String str = "{\n" +
                 "    \"status\": 1,\n" +
                 "    \"total\": 8882.4,\n" +
                 "    \"surplus\": \"-1,590.60\",\n" +
@@ -335,35 +333,18 @@ public class TestDataUtil {
     }
 
 
-
     //记一笔支出假数据
-    public static TallyNoteBean getTallyNoteBeanOut(){
-        String str= "{\n" +
+    public static TallyNoteBean getTallyNoteBeanOut() {
+        String str = "{\n" +
                 "    \"status\":1,\n" +
                 "    \"sortlist\":[\n" +
-                "        {\n" +
-                "            \"sort_id\":\"301\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"偿还费用\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/changhuanfeiyong@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"302\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"手续费\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/shouxufei@2x.png\"\n" +
-                "        },\n" +
+
+
                 "        {\n" +
                 "            \"sort_id\":\"303\",\n" +
                 "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"商城消费\",\n" +
+                "            \"sort_name\":\"网购\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/shangchengxiaofei@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"304\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"违约金\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/weiyuejin@2x.png\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"sort_id\":\"305\",\n" +
@@ -371,12 +352,7 @@ public class TestDataUtil {
                 "            \"sort_name\":\"住房\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/zhufang@2x.png\"\n" +
                 "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"306\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"办公\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/bangong@2x.png\"\n" +
-                "        },\n" +
+
                 "        {\n" +
                 "            \"sort_id\":\"307\",\n" +
                 "            \"uid\":\"0\",\n" +
@@ -395,90 +371,37 @@ public class TestDataUtil {
                 "            \"sort_name\":\"通讯\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tongxun@2x.png\"\n" +
                 "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"310\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"运动\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/yundong@2x.png\"\n" +
-                "        },\n" +
+
                 "        {\n" +
                 "            \"sort_id\":\"311\",\n" +
                 "            \"uid\":\"0\",\n" +
                 "            \"sort_name\":\"娱乐\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/yule@2x.png\"\n" +
                 "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"312\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"居家\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/jujia@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"313\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"宠物\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/chongwu@2x.png\"\n" +
-                "        },\n" +
+
+
                 "        {\n" +
                 "            \"sort_id\":\"314\",\n" +
                 "            \"uid\":\"0\",\n" +
                 "            \"sort_name\":\"数码\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/shuma@2x.png\"\n" +
                 "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"315\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"捐赠\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/juanzeng@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"316\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"零食\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/lingshi@2x.png\"\n" +
-                "        },\n" +
+
                 "        {\n" +
                 "            \"sort_id\":\"317\",\n" +
                 "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"孩子\",\n" +
+                "            \"sort_name\":\"亲人\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/haizi@2x.png\"\n" +
                 "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"318\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"长辈\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/zhangbei@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"319\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"礼物\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/liwu@2x.png\"\n" +
-                "        },\n" +
+
                 "        {\n" +
                 "            \"sort_id\":\"320\",\n" +
                 "            \"uid\":\"0\",\n" +
                 "            \"sort_name\":\"学习\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/xuexi@2x.png\"\n" +
                 "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"321\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"水果\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/shuiguo@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"322\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"美容\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/meirong@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"323\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"维修\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/weixiu@2x.png\"\n" +
-                "        },\n" +
+
+
                 "        {\n" +
                 "            \"sort_id\":\"324\",\n" +
                 "            \"uid\":\"0\",\n" +
@@ -491,12 +414,7 @@ public class TestDataUtil {
                 "            \"sort_name\":\"交通\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/jiaotong@2x.png\"\n" +
                 "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"326\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"饮料\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/jiushuiyinliao@2x.png\"\n" +
-                "        },\n" +
+
                 "        {\n" +
                 "            \"sort_id\":\"327\",\n" +
                 "            \"uid\":\"0\",\n" +
@@ -509,30 +427,14 @@ public class TestDataUtil {
                 "            \"sort_name\":\"吃啊\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tianjiade@2x.png\"\n" +
                 "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"351\",\n" +
-                "            \"uid\":\"262\",\n" +
-                "            \"sort_name\":\"xxx\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tianjiade@2x.png\"\n" +
-                "        },\n" +
+
                 "        {\n" +
                 "            \"sort_id\":\"356\",\n" +
                 "            \"uid\":\"262\",\n" +
                 "            \"sort_name\":\"爱情\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tianjiade@2x.png\"\n" +
                 "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"357\",\n" +
-                "            \"uid\":\"262\",\n" +
-                "            \"sort_name\":\"新年快乐\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tianjiade@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"359\",\n" +
-                "            \"uid\":\"262\",\n" +
-                "            \"sort_name\":\"阿卡丽\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tianjiade@2x.png\"\n" +
-                "        },\n" +
+
                 "        {\n" +
                 "            \"sort_id\":\"0\",\n" +
                 "            \"uid\":\"0\",\n" +
@@ -547,11 +449,11 @@ public class TestDataUtil {
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"3_28\",\n" +
-                "            \"pay_name\":\"银行卡-尾号8566\"\n" +
+                "            \"pay_name\":\"支付宝\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"3_22\",\n" +
-                "            \"pay_name\":\"银行卡-尾号1111\"\n" +
+                "            \"pay_name\":\"微信\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"3_10\",\n" +
@@ -565,8 +467,8 @@ public class TestDataUtil {
 
 
     //记一笔收入假数据
-    public static TallyNoteBean getTallyNoteBeanIn(){
-        String str= "{\n" +
+    public static TallyNoteBean getTallyNoteBeanIn() {
+        String str = "{\n" +
                 "    \"status\":1,\n" +
                 "    \"sortlist\":[\n" +
                 "        {\n" +
@@ -649,35 +551,15 @@ public class TestDataUtil {
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"3_29\",\n" +
-                "            \"pay_name\":\"银行卡-尾号8888\"\n" +
+                "            \"pay_name\":\"支付宝\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"3_28\",\n" +
-                "            \"pay_name\":\"银行卡-尾号8566\"\n" +
+                "            \"pay_name\":\"微信\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"3_10\",\n" +
                 "            \"pay_name\":\"银行卡-尾号4565\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pay_type\":\"3_9\",\n" +
-                "            \"pay_name\":\"银行卡-尾号4565\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pay_type\":\"3_8\",\n" +
-                "            \"pay_name\":\"银行卡-尾号4565\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pay_type\":\"3_7\",\n" +
-                "            \"pay_name\":\"银行卡-尾号4563\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pay_type\":\"3_4\",\n" +
-                "            \"pay_name\":\"银行卡-尾号5467\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pay_type\":\"3_1\",\n" +
-                "            \"pay_name\":\"银行卡-尾号7899\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"4\",\n" +
@@ -690,10 +572,9 @@ public class TestDataUtil {
     }
 
 
-
     //我的账户假数据
-    public static TallyAccountBean getTallyAccountBean(){
-        String str= "{\n" +
+    public static TallyAccountBean getTallyAccountBean() {
+        String str = "{\n" +
                 "    \"status\":1,\n" +
                 "    \"total_in\":\"88,929.06\",\n" +
                 "    \"total_out\":\"130,848.00\",\n" +
@@ -767,9 +648,6 @@ public class TestDataUtil {
 
         return new Gson().fromJson(str, TallyAccountBean.class);
     }
-
-
-
 
 
 }

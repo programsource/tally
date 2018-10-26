@@ -5,8 +5,10 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cocoon.jay.tallybook.R;
 import com.cocoon.jay.tallybook.activity.TallyBookNoteActivity;
@@ -16,6 +18,7 @@ import com.cocoon.jay.tallybook.stickyheader.StickyHeaderGridLayoutManager;
 import com.cocoon.jay.tallybook.utils.DateUtils;
 import com.cocoon.jay.tallybook.utils.TestDataUtil;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -48,12 +51,15 @@ public class MenuFirstFragment extends BaseFragment {
     FloatingActionButton floatBtn;
     Unbinder unbinder;
 
+    private static final String TAG = "MenuFirstFragment";
 
     private static final int SPAN_SIZE = 1;
     private StickyHeaderGridLayoutManager mLayoutManager;
     private TallyDetailAdapter adapter;
     private List<TallyDetailBean.DaylistBean> list;
 
+    private static final int REQUEST_CODE_ADD_DATA = 1;
+    private static final int RESULT_CODE_OK = 1;
 
     @Override
     protected int getLayoutId() {
@@ -111,7 +117,37 @@ public class MenuFirstFragment extends BaseFragment {
 
     @OnClick(R.id.float_btn)
     public void onViewClicked() {
-        Intent intent = new Intent(getContext(),TallyBookNoteActivity.class);
-        startActivity(intent);
+        Intent intent = new Intent(getContext(), TallyBookNoteActivity.class);
+        startActivityForResult(intent, REQUEST_CODE_ADD_DATA);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case REQUEST_CODE_ADD_DATA:
+                if (resultCode == RESULT_CODE_OK) {
+                    String category = data.getStringExtra("category");
+                    String date = data.getStringExtra("date");
+                    String cashNumber = data.getStringExtra("cashNumber");
+                    String consumptionType = data.getStringExtra("type");
+
+                    TallyDetailBean.DaylistBean daylistBean = null;
+                    for (TallyDetailBean.DaylistBean bean : list) {
+                        if (bean.getTime().equals(date)) {
+                            daylistBean = bean;
+                        } else {
+                            daylistBean = new TallyDetailBean.DaylistBean(date, "1000", new ArrayList<TallyDetailBean.DaylistBean.ListBean>());
+                        }
+                    }
+                    TallyDetailBean.DaylistBean.ListBean listBean = new TallyDetailBean.DaylistBean.ListBean("1000", cashNumber, category, "");
+                    daylistBean.getList().add(listBean);
+                    Log.d(TAG, daylistBean.toString());
+                    list.add(0, daylistBean);
+                    adapter.notifyDataSetChanged();
+                    adapter.notifyAllSectionsDataSetChanged();//需调用此方法刷新
+                    Log.d(TAG, "onActivity result");
+                }
+        }
     }
 }
