@@ -380,13 +380,13 @@ public class TestDataUtil {
                 "        {\n" +
                 "            \"sort_id\":\"303\",\n" +
                 "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"网购\",\n" +
+                "            \"sort_name\":\"住房\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/shangchengxiaofei@2x.png\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"sort_id\":\"305\",\n" +
                 "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"住房\",\n" +
+                "            \"sort_name\":\"医疗\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/zhufang@2x.png\"\n" +
                 "        },\n" +
 
@@ -399,27 +399,27 @@ public class TestDataUtil {
                 "        {\n" +
                 "            \"sort_id\":\"308\",\n" +
                 "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"医疗\",\n" +
+                "            \"sort_name\":\"交通\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/yiliao@2x.png\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"sort_id\":\"309\",\n" +
                 "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"通讯\",\n" +
+                "            \"sort_name\":\"衣鞋\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tongxun@2x.png\"\n" +
                 "        },\n" +
 
                 "        {\n" +
                 "            \"sort_id\":\"317\",\n" +
                 "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"亲人\",\n" +
+                "            \"sort_name\":\"美妆\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/haizi@2x.png\"\n" +
                 "        },\n" +
 
                 "        {\n" +
                 "            \"sort_id\":\"320\",\n" +
                 "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"学习\",\n" +
+                "            \"sort_name\":\"旅行\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/xuexi@2x.png\"\n" +
                 "        },\n" +
 
@@ -427,7 +427,7 @@ public class TestDataUtil {
                 "        {\n" +
                 "            \"sort_id\":\"325\",\n" +
                 "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"交通\",\n" +
+                "            \"sort_name\":\"其他\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/jiaotong@2x.png\"\n" +
                 "        },\n" +
 
