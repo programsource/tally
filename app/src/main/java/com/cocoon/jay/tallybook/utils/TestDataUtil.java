@@ -237,7 +237,10 @@ public class TestDataUtil {
     }
 
 
-    //类别报表支出假数据
+    /**
+     * 类别报表支出假数据
+     * @return
+     */
     public static TallyTypeBean getTallyTypeBeanOut() {
         String str = "{\n" +
                 "    \"status\":1,\n" +
@@ -269,36 +272,36 @@ public class TestDataUtil {
                 "            \"typename\":\"捐赠\",\n" +
                 "            \"back_color\":\"#f87953\"\n" +
                 "        },\n" +
-                "        {\n" +
-                "            \"affect_money\":656,\n" +
-                "            \"type\":\"308\",\n" +
-                "            \"typename\":\"医疗\",\n" +
-                "            \"back_color\":\"#ffb073\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"affect_money\":800,\n" +
-                "            \"type\":\"312\",\n" +
-                "            \"typename\":\"居家\",\n" +
-                "            \"back_color\":\"#db7b32\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"affect_money\":1200,\n" +
-                "            \"type\":\"303\",\n" +
-                "            \"typename\":\"商城消费\",\n" +
-                "            \"back_color\":\"#ff7f02\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"affect_money\":1340,\n" +
-                "            \"type\":\"320\",\n" +
-                "            \"typename\":\"学习\",\n" +
-                "            \"back_color\":\"#f8984f\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"affect_money\":2000,\n" +
-                "            \"type\":\"317\",\n" +
-                "            \"typename\":\"孩子\",\n" +
-                "            \"back_color\":\"#f87953\"\n" +
-                "        },\n" +
+//                "        {\n" +
+//                "            \"affect_money\":656,\n" +
+//                "            \"type\":\"308\",\n" +
+//                "            \"typename\":\"医疗\",\n" +
+//                "            \"back_color\":\"#ffb073\"\n" +
+//                "        },\n" +
+//                "        {\n" +
+//                "            \"affect_money\":800,\n" +
+//                "            \"type\":\"312\",\n" +
+//                "            \"typename\":\"居家\",\n" +
+//                "            \"back_color\":\"#db7b32\"\n" +
+//                "        },\n" +
+//                "        {\n" +
+//                "            \"affect_money\":1200,\n" +
+//                "            \"type\":\"303\",\n" +
+//                "            \"typename\":\"商城消费\",\n" +
+//                "            \"back_color\":\"#ff7f02\"\n" +
+//                "        },\n" +
+//                "        {\n" +
+//                "            \"affect_money\":1340,\n" +
+//                "            \"type\":\"320\",\n" +
+//                "            \"typename\":\"学习\",\n" +
+//                "            \"back_color\":\"#f8984f\"\n" +
+//                "        },\n" +
+//                "        {\n" +
+//                "            \"affect_money\":2000,\n" +
+//                "            \"type\":\"317\",\n" +
+//                "            \"typename\":\"孩子\",\n" +
+//                "            \"back_color\":\"#f87953\"\n" +
+//                "        },\n" +
                 "        {\n" +
                 "            \"affect_money\":257,\n" +
                 "            \"type\":\"0\",\n" +
@@ -312,7 +315,11 @@ public class TestDataUtil {
     }
 
 
-    //类别报表收入假数据
+    /**
+     * 类别报表收入假数据
+     * 各种收入类型
+     * @return
+     */
     public static TallyTypeBean getTallyTypeBeanIn() {
         String str = "{\n" +
                 "    \"status\": 1,\n" +
@@ -332,18 +339,18 @@ public class TestDataUtil {
                 "            \"typename\": \"额外收益\",\n" +
                 "            \"back_color\": \"#8da3fd\"\n" +
                 "        },\n" +
-                "        {\n" +
-                "            \"affect_money\": 830,\n" +
-                "            \"type\": \"335\",\n" +
-                "            \"typename\": \"兼职\",\n" +
-                "            \"back_color\": \"#6884f9\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"affect_money\": 800,\n" +
-                "            \"type\": \"332\",\n" +
-                "            \"typename\": \"资金补偿\",\n" +
-                "            \"back_color\": \"#8096f5\"\n" +
-                "        },\n" +
+//                "        {\n" +
+//                "            \"affect_money\": 830,\n" +
+//                "            \"type\": \"335\",\n" +
+//                "            \"typename\": \"兼职\",\n" +
+//                "            \"back_color\": \"#6884f9\"\n" +
+//                "        },\n" +
+//                "        {\n" +
+//                "            \"affect_money\": 800,\n" +
+//                "            \"type\": \"332\",\n" +
+//                "            \"typename\": \"资金补偿\",\n" +
+//                "            \"back_color\": \"#8096f5\"\n" +
+//                "        },\n" +
                 "        {\n" +
                 "            \"affect_money\": 600,\n" +
                 "            \"type\": \"328\",\n" +
@@ -355,7 +362,7 @@ public class TestDataUtil {
                 "            \"type\": \"0\",\n" +
                 "            \"typename\": \"杂项\",\n" +
                 "            \"back_color\": \"#6783fd\"\n" +
-                "        }\n" + 
+                "        }\n" +
                 "    ]\n" +
                 "}";
 
@@ -579,17 +586,17 @@ public class TestDataUtil {
                 "        {\n" +
                 "            \"type\":\"2\",\n" +
                 "            \"img\":\"/UF/Uploads/Noteimg/account@2x.png\",\n" +
-                "            \"name\":\"账户余额\",\n" +
+                "            \"name\":\"微信\",\n" +
                 "            \"num\":\"\",\n" +
-                "            \"income\":\"+41.06\",\n" +
+                "            \"income\":\"+414.06\",\n" +
                 "            \"outcome\":\"-2.00\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"type\":\"3_1\",\n" +
                 "            \"img\":\"/UF/Uploads/Noteimg/bank@2x.png\",\n" +
-                "            \"name\":\"银行卡\",\n" +
-                "            \"num\":\"尾号7899\",\n" +
-                "            \"income\":\"+0.00\",\n" +
+                "            \"name\":\"支付宝\",\n" +
+                "            \"num\":\"\",\n" +
+                "            \"income\":\"+1000.00\",\n" +
                 "            \"outcome\":\"-0.00\"\n" +
                 "        },\n" +
                 "        {\n" +
@@ -597,30 +604,6 @@ public class TestDataUtil {
                 "            \"img\":\"/UF/Uploads/Noteimg/bank@2x.png\",\n" +
                 "            \"name\":\"银行卡\",\n" +
                 "            \"num\":\"尾号5467\",\n" +
-                "            \"income\":\"+0.00\",\n" +
-                "            \"outcome\":\"-0.00\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"type\":\"3_7\",\n" +
-                "            \"img\":\"/UF/Uploads/Noteimg/bank@2x.png\",\n" +
-                "            \"name\":\"银行卡\",\n" +
-                "            \"num\":\"尾号4563\",\n" +
-                "            \"income\":\"+0.00\",\n" +
-                "            \"outcome\":\"-0.00\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"type\":\"3_8\",\n" +
-                "            \"img\":\"/UF/Uploads/Noteimg/bank@2x.png\",\n" +
-                "            \"name\":\"银行卡\",\n" +
-                "            \"num\":\"尾号4565\",\n" +
-                "            \"income\":\"+0.00\",\n" +
-                "            \"outcome\":\"-0.00\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"type\":\"3_9\",\n" +
-                "            \"img\":\"/UF/Uploads/Noteimg/bank@2x.png\",\n" +
-                "            \"name\":\"银行卡\",\n" +
-                "            \"num\":\"尾号4565\",\n" +
                 "            \"income\":\"+0.00\",\n" +
                 "            \"outcome\":\"-0.00\"\n" +
                 "        },\n" +
