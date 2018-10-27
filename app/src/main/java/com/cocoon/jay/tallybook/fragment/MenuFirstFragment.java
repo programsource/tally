@@ -82,7 +82,6 @@ public class MenuFirstFragment extends BaseFragment {
             @Override
             public void onRefresh() {
                 swipe.setRefreshing(false);
-                setTestData();//恢复了假数据
             }
         });
 
@@ -133,17 +132,22 @@ public class MenuFirstFragment extends BaseFragment {
                     String consumptionType = data.getStringExtra("type");
 
                     TallyDetailBean.DaylistBean daylistBean = null;
+                    boolean isSame = false;//是否是同一天
                     for (TallyDetailBean.DaylistBean bean : list) {
                         if (bean.getTime().equals(date)) {
+                            isSame = true;
                             daylistBean = bean;
-                        } else {
-                            daylistBean = new TallyDetailBean.DaylistBean(date, "1000", new ArrayList<TallyDetailBean.DaylistBean.ListBean>());
+                            break;
                         }
                     }
+                    if (!isSame){
+                        daylistBean = new TallyDetailBean.DaylistBean(date, "1000", new ArrayList<TallyDetailBean.DaylistBean.ListBean>());
+                        list.add(0, daylistBean);
+                    }
                     TallyDetailBean.DaylistBean.ListBean listBean = new TallyDetailBean.DaylistBean.ListBean("1000", cashNumber, category, "");
-                    daylistBean.getList().add(listBean);
+                    daylistBean.getList().add(0,listBean);
+
                     Log.d(TAG, daylistBean.toString());
-                    list.add(0, daylistBean);
                     adapter.notifyDataSetChanged();
                     adapter.notifyAllSectionsDataSetChanged();//需调用此方法刷新
                     Log.d(TAG, "onActivity result");

@@ -13,6 +13,35 @@ import com.google.gson.Gson;
 public class TestDataUtil {
 
 
+    private static String affect_money = "-300.00";
+    private static String typename = "餐饮";
+    private static String detailBean =
+            "                {\n" +
+                    "                    \"id\":\"171\",\n" +
+                    "                    \"affect_money\":\"" + affect_money + "\",\n" +
+                    "                    \"typename\":\"" + typename + "\",\n" +
+                    "                    \"img\":\"/UF/Uploads/Noteimg/listout/tianjiade@2x.png\"\n" +
+                    "                }\n";
+
+
+    private static String typeBeanOut =
+                    "        {\n" +
+                    "            \"affect_money\" : \" " + affect_money + "\",\n" +
+                    "            \"type\":\"317\",\n" +
+                    "             \"typename\":\" " + typename + "\",\n" +
+                    "            \"back_color\":\"#f87953\"\n" +
+                    "        },\n";
+    private static String typeBeanIn =
+            "        {\n" +
+                    "            \"affect_money\"" + affect_money + ",\n" +
+                    "            \"type\":\"317\",\n" +
+                    "             \"typename\":\" " + typename + "\",\n" +
+                    "            \"back_color\":\"#f87953\"\n" +
+                    "        },\n";
+    private static String noteBeanOut;
+    private static String noteBeanIn;
+    private static String accountBean;
+
     //明细假数据
     public static TallyDetailBean getTallyDetailBean() {
         String str = "{\n" +
@@ -25,7 +54,7 @@ public class TestDataUtil {
                 "            \"money\":\"支出：18268.00 收入：0.00\",\n" +
                 "            \"list\":[\n" +
                 "                {\n" +
-                "                    \"id\":\"185\",\n" +
+                "                    \"id\": \"185\",\n" +
                 "                    \"affect_money\":\"-25.00\",\n" +
                 "                    \"typename\":\"餐饮\",\n" +
                 "                    \"img\":\"/UF/Uploads/Noteimg/listout/canyin@2x.png\"\n" +
@@ -157,6 +186,7 @@ public class TestDataUtil {
                 "                    \"img\":\"/UF/Uploads/Noteimg/listin/lixi@2x.png\"\n" +
                 "                }\n" +
                 "            ]\n" +
+
                 "        },\n" +
                 "        {\n" +
                 "            \"time\":\"16日-星期一\",\n" +
@@ -209,7 +239,7 @@ public class TestDataUtil {
 
     //类别报表支出假数据
     public static TallyTypeBean getTallyTypeBeanOut() {
-         String str = "{\n" +
+        String str = "{\n" +
                 "    \"status\":1,\n" +
                 "    \"total\":9973,\n" +
                 "    \"surplus\":\"-1,090.60\",\n" +
@@ -325,7 +355,7 @@ public class TestDataUtil {
                 "            \"type\": \"0\",\n" +
                 "            \"typename\": \"杂项\",\n" +
                 "            \"back_color\": \"#6783fd\"\n" +
-                "        }\n" +
+                "        }\n" + 
                 "    ]\n" +
                 "}";
 
@@ -373,21 +403,6 @@ public class TestDataUtil {
                 "        },\n" +
 
                 "        {\n" +
-                "            \"sort_id\":\"311\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"娱乐\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/yule@2x.png\"\n" +
-                "        },\n" +
-
-
-                "        {\n" +
-                "            \"sort_id\":\"314\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"数码\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/shuma@2x.png\"\n" +
-                "        },\n" +
-
-                "        {\n" +
                 "            \"sort_id\":\"317\",\n" +
                 "            \"uid\":\"0\",\n" +
                 "            \"sort_name\":\"亲人\",\n" +
@@ -403,36 +418,10 @@ public class TestDataUtil {
 
 
                 "        {\n" +
-                "            \"sort_id\":\"324\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"旅行\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/lvxing@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
                 "            \"sort_id\":\"325\",\n" +
                 "            \"uid\":\"0\",\n" +
                 "            \"sort_name\":\"交通\",\n" +
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/jiaotong@2x.png\"\n" +
-                "        },\n" +
-
-                "        {\n" +
-                "            \"sort_id\":\"327\",\n" +
-                "            \"uid\":\"0\",\n" +
-                "            \"sort_name\":\"礼金\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/lijin@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"346\",\n" +
-                "            \"uid\":\"262\",\n" +
-                "            \"sort_name\":\"吃啊\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tianjiade@2x.png\"\n" +
-                "        },\n" +
-
-                "        {\n" +
-                "            \"sort_id\":\"356\",\n" +
-                "            \"uid\":\"262\",\n" +
-                "            \"sort_name\":\"爱情\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tianjiade@2x.png\"\n" +
                 "        },\n" +
 
                 "        {\n" +
